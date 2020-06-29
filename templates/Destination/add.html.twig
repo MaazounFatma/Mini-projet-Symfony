@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %}NewDestination{% endblock %}
+{% block body %}
+<style>
+  h4 {
+    font-style: oblique;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+</style>
+<div class="container" mt-4>
+  <h4>Add Destination</h4>
+  {{form_start(form)}}
+  <label>
+    Code
+  </label>
+  {{form_widget(form.code_dest, {'attr': {'class': 'form-control'}}) }}
+  <br>
+  <label>
+    Destination
+  </label>
+  {{form_widget(form.des_dest, {'attr': {'class': 'form-control'}}) }}
+  <br>
+  <label>
+    Image
+  </label>
+  {{form_widget(form.image, {'attr': {'class': 'form-control'}}) }}
+  <br>
+  <button type="submit" class="btn btn-success" style='width:100px;background-color:#53a1a1'>Add</button>
+  {{form_end(form)}}
+
+
+</div>
+{% endblock %}

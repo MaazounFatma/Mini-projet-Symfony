@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}New Circuit{% endblock %}
+{% block body %}
+<style>
+  h4 {
+    font-style: oblique;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+</style>
+<div class="container" mt-4>
+  <h4>Add Etape_Circuit</h4>
+  {{form_start(form)}}
+
+  {{form_widget(form) }}
+
+  <br>
+  <button type="submit" class="btn btn-success" style='width:100px;background-color:#53a1a1'>Add</button>
+  {{form_end(form)}}
+
+
+</div>
+{% endblock %}

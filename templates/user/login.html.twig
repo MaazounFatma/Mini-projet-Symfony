@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  {% block body %}
+  <style>
+    body {
+      background-image: url("https://media.cntraveler.com/photos/59cd14cb9465da68882fb4f4/master/pass/Debate_GettyImages-585587819.jpg");
+      background-color: #cccccc;
+      height: 500px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .login-form-container {
+      position: fixed;
+      top: 50%;
+      left: 80%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 30%;
+      height: 80%;
+      border-radius: 3px;
+      background-color: #272E38;
+      overflow: hidden;
+      opacity: 0.8;
+      border-radius: 4%;
+    }
+
+    .login-form-container:hover {
+      opacity: 0.9;
+    }
+
+
+
+    header {
+      background-color: #1e232b;
+      color: white;
+      display: block;
+      padding: 1.5em;
+      text-align: center;
+      opacity: 0.8;
+
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: block;
+      margin: 2em auto;
+      border-bottom: 1px solid #FC7148;
+      border-radius: 3px;
+      width: 170px;
+      padding-left: 20px;
+      opacity: 1;
+    }
+
+    input {
+      width: 100%;
+      line-height: 2;
+      background-color: transparent;
+      border: none;
+      padding: .6em .5em;
+      outline: 0;
+      color: white;
+      opacity: 1;
+    }
+
+    ::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    button {
+      outline: 0;
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      background-color: #FC7148;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      width: 200px;
+      padding: 1.2em 0;
+      margin: 4em auto;
+      display: block;
+
+      opacity: 1;
+
+
+
+    }
+
+    p {
+      opacity: 1;
+      color: white;
+      margin: 4%;
+      margin-left: 8%
+    }
+
+  </style>
+  <div id="login" class="login-form-container">
+    <header>LOGIN - SIGN UP</header>
+    <form action="{{path('login')}}" method="post">
+      <div class="input-wrapper">
+
+        <input type="text" placeholder="username.." style="color:white;" name="_username" required />
+      </div>
+      <div class="input-wrapper">
+        <input type="password" placeholder="password.." style="color:white;" name="_password" required />
+      </div>
+      <button id="continue" type="submit">CONTINUE</button>
+    </form>
+    <p>Vous n’avez pas de compte ? <a href="{{path('security_registration')}}">Inscrivez-vous</a></p>
+
+  </div>
+
+
+  {% endblock %}
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

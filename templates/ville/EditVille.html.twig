@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %}NewDestination{% endblock %}
+{% block body %}
+<style>
+  h4 {
+    font-style: oblique;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+</style>
+{% for message in app.flashes('success') %}
+<div class="alert alert-success">
+  {{ message }}
+</div>
+{% endfor %}
+<div class="container" mt-4>
+
+  <h4>Edit Ville</h4>
+  {{form_start(form)}}
+  {{form_widget(form)}}
+  <br>
+  <button type="submit" class="btn btn-success" style='width:100px;background-color:#53a1a1'>Edit</button>
+  {{form_end(form)}}
+
+
+</div>
+
+{% endblock %}

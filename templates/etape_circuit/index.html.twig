@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EtapeCircuitController!{% endblock %}
+
+{% block body %}
+<style>
+  #tableau {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+  }
+
+  #b {
+    font-size: 20px;
+    padding: 6px;
+    width: 100%;
+
+    color: #fff;
+    background-color: #53a1a1;
+    border-color: #53a1a1;
+    margin-top: 2%
+  }
+
+</style>
+<h3 style="text-align:center;color: #ee6381;background-color:white;margin:3%">
+  Les etapes du circuit <br>{{etapes[0].codecircuit.descircuit}}</h3>
+<div id="tableau">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Ville</th>
+        <th scope="col">Duree</th>
+        <th scope="col">Ordre</th>
+        {% if  app.user %}
+        <th scope="col">Actions</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in etapes %}
+      <tr>
+        <th scope="row">{{e.codeville.desville}}</th>
+        <td>{{e.getDureeEtape()}} jours</td>
+        <td>{{e.getOrdreEtape()}}</td>
+        {% if  app.user %}
+        <th><a style="margin-left:  4%;color:#ee6381" href="{{path('EditEtape',{'id':e.id}) }}">Edit</a>
+          <a style="margin-left:34%;color:#ee6381" href="{{path('DeleteEtape',{'id':e.id}) }}">Delete</a></th>
+        {% endif %}
+      </tr>
+      {% endfor %}
+
+    </tbody>
+
+  </table>
+  {% if  app.user %}
+  <a href=" {{path('NewEtape') }}">
+    <button id="b" class="btn ">Add Etape</button></a> </button>
+  {% endif %}
+  {% endblock %}
